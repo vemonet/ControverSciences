@@ -25,6 +25,14 @@ $ sudo apt-get install postgresql-9.4
 $ sudo apt-get install libpq-dev
 ```
 
+You will maybe need to add the postgresql repository to install postgresql-9.4:
+```
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get upgrade
+```
+
 Then create the user (AKA "role") inside PostgreSQL:
 
 ```
