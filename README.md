@@ -16,6 +16,12 @@ https://rvm.io/
 
 ControverSciences is currently using ruby 2.1.2
 
+```
+/bin/bash --login
+rvm install ruby-2.1.2
+rvm --default use 2.1.2
+```
+
 ### Install PostgreSQL 9.4 and create role
 
 Install the Postgresql libraries:
@@ -36,7 +42,10 @@ sudo apt-get upgrade
 Then create the user (AKA "role") inside PostgreSQL:
 
 ```
-$ psql -d postgres
+psql -d postgres
+# or 
+sudo -u postgres psql postgres
+
 postgres=# create role controversciences login createdb password 'password';
 postgres=# \q
 ```
@@ -53,6 +62,7 @@ $ bundle install
 ```
 $ rake db:create
 $ sh ./dump/pg_restore
+$ rake db:migrate RAILS_ENV=development
 ```
 
 If you get an error at this step, as the following:
