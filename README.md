@@ -47,6 +47,7 @@ psql -d postgres
 sudo -u postgres psql postgres
 
 postgres=# create role controversciences login createdb password 'password';
+postgres=# ALTER USER controversciences WITH SUPERUSER;
 postgres=# \q
 ```
 
@@ -82,7 +83,7 @@ $ rails s
 
 Navigate to 127.0.0.1:3000 with your favorite browser and you are Up & Running
 
-## Repopulate the database after a maj or if you screwed the database
+## Repopulate the database after an update or if you screwed the database
 
 ```
 $ rake db:drop db:create
