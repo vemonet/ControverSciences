@@ -33,6 +33,12 @@ class UsersController < ApplicationController
       query = query.search_by_name(params[:filter])
     end
     @users_count = query.count
+    @contributer_count = 0
+    query.each do |u|
+      if u.has_contributed?
+        @contributer_count += 1
+      end
+    end
     @users = query.page(params[:page]).per(24)
   end
 
