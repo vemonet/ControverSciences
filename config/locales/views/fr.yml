@@ -81,6 +81,9 @@ fr:
       users:
         one: "%{count} contributeur"
         other: "%{count} contributeurs"
+      registered:
+        one: "%{count} inscrit dont "
+        other: "%{count} inscrits dont "
       comments:
         one: "%{count} analyse"
         other: "%{count} analyses"
