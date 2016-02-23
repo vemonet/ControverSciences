@@ -26,7 +26,8 @@
           </div>
       <% end %>
       <h1>
-        <%= t('views.pluralize.users', count: @users_count) %>
+        <%= t('views.pluralize.registered', count: @users_count) %>
+        <%= t('views.pluralize.users', count: @contributer_count) %>
       </h1><br>
       <div id="comments">
         <div class="row page">
