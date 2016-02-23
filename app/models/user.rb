@@ -168,6 +168,14 @@ class User < ActiveRecord::Base
     Notification.where(user_id: self.id).count
   end
 
+  def has_contributed?
+    if self.notifications_all > 0
+      true
+    else
+      false
+    end
+  end
+
   def notifications_count
     notifications_all + notif_patches + nb_notifs + admin_patches + admin_dead_links + admin_pending_users
   end
@@ -183,5 +191,5 @@ class User < ActiveRecord::Base
   # Converts email to all lower-case.
   def downcase_email
     self.email = email.downcase
-  end
+  end 
 end
